@@ -1,0 +1,207 @@
+﻿@using DAL.Models;
+@{
+    IEnumerable<Category> categories = (IEnumerable<Category>)ViewData["Categories"];
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DMSTask</title>
+
+<!-- Favicons -->
+    @*<link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+*@
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <script src="https://kit.fontawesome.com/adc5c6a0d2.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- fontawesome-->
+    @*<link href="~/assets/fontawesome-free/css/all.min.css" rel="stylesheet">*@
+
+    <script src="https://kit.fontawesome.com/adc5c6a0d2.js" crossorigin="anonymous"></script>
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a asp-action="Index" asp-controller="Home" class="logo d-flex align-items-center">
+
+                <span class="d-none d-lg-block">DMS Task</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" asp-action="Search" asp-controller="Products">
+                <input type="text" name="filter" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar " style="background-color:#3C4B64">
+
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <!-- start Dashboard Nav -->
+            <li class="nav-item">
+                <a style="background-color:#303C54;color:white;border-radius:25px" class="nav-link " asp-action="Index" asp-controller="Home">
+                    <i style="color:white" class="bi bi-grid mx-2"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <!-- End Dashboard Nav -->
+
+            <!-- start Category Nav -->
+            <li class="nav-item" style="background-color:#303C54;color:white;border-radius:25px">
+                <a style="background-color:#303C54;color:white;border-radius:25px" class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i style="color:white" class="fa-solid fa-list mx-2"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                       
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="Categories" asp-action="Index">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>All Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="Categories" asp-action="Create">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>Create New Category</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- End Category Nav -->
+
+            <!-- start Product Nav -->
+            <li class="nav-item" style="background-color:#303C54;color:white;border-radius:25px">
+                <a style="background-color:#303C54;color:white;border-radius:25px" class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i style="color:white" class="fa-brands fa-product-hunt mx-2 "></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="Products" asp-action="Index">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>All Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="Products" asp-action="Create">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>Create New Product</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- End Product Nav -->
+
+            <!-- start CustomFiled Nav -->
+            
+            <li class="nav-item" style="background-color:#303C54;color:white;border-radius:25px">
+                <a style="background-color:#303C54;color:white;border-radius:25px" class="nav-link collapsed" data-bs-target="#User-nav" data-bs-toggle="collapse" href="#">
+                    <i style="color:white" class="fa-solid fa-list mx-2"></i><span>CustomFiled</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="User-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>                                                                                            
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="CustomFileds" asp-action="Index">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>All Fiels </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a style="background-color:#303C54;color:white;border-radius:25px" asp-controller="CustomFileds" asp-action="Create">
+                            <i style="color:white" class="bi bi-circle mx-2"></i><span>Create CustomFiled</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- End CustomFiled Nav -->
+            <!-- start Searching Nav -->
+
+            <li class="nav-item" style="background-color:#303C54;color:white;border-radius:25px">
+                <a style="background-color:#303C54;color:white;border-radius:25px" class="nav-link collapsed" data-bs-target="#Searching-nav" data-bs-toggle="collapse" href="#">
+                    <i style="color:white" class="fa-solid fa-list mx-2"></i><span>Searching</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Searching-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                      @await Component.InvokeAsync("Category")
+                          
+                    </li>
+                 
+                </ul>
+            </li>
+            <!-- End Searching Nav -->
+
+        </ul>
+
+    </aside>
+    <!-- End Sidebar-->
+
+
+    <main id="main" class="main" style="min-height:570px;background-color:#F0F1F3">
+
+        @RenderBody()
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+
+    @*///*@
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a class="text-dark fw-bold fst-italic" href="mailto:salh.15237657@compit.au.edu.eg">salh.15237657@compit.au.edu.eg</a>
+
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="~/assets/vendor/quill/quill.min.js"></script>
+    <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+ 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    <!-- icon CDN-->
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+
+   
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

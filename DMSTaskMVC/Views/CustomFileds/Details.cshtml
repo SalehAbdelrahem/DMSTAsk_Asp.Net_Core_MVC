@@ -1,0 +1,94 @@
+﻿@model BLL.DTOs.CustomFields.DetailscustomFieldDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 style="color:#232F3E;font-style:italic;font-weight:bold;">
+    <i class="fa-solid fa-magnifying-glass mx-2 " style=" font-size:smaller"></i>
+    Details Of custom Field name : @Model.Name
+</h4>
+
+<div class="mt-4">
+    <div class="row justify-content-center ">
+
+        <div class="col-lg-6 col-sm-12 ">
+            <div class="card  text-white" style="border:none;font-style:italic;background-color:#131921">
+
+                <div class="card-body">
+                 
+                        <h3 style="color:#DFB162"> @Html.DisplayFor(model => model.Name)</h3>
+                        <h5 style="color:#DFB162" class="card-text">@Html.DisplayName("Value : ")</h5>
+                   
+                   
+                    <dl class="row">
+
+                        <dt class="col">
+                            @Html.DisplayNameFor(model => model.customFieldDataDTO):
+                        </dt>
+                        <dd class="col">
+                         
+                            @Html.DisplayFor(model => model.customFieldDataDTO.Value)
+                        </dd>
+
+                    </dl>
+                    <h5 style="color:#DFB162" class="card-text">@Html.DisplayName("Product : ")</h5>
+
+                    <dl class="row">
+
+                        <dt class="col-md-4 col-sm-6">
+                            @Html.DisplayNameFor(model => model.ProductDTO):
+                        </dt>
+                        <dd class="col-md-8  col-sm-6">
+                        <dt class="col-md-4 col-sm-6">
+                                @Html.DisplayNameFor(model => model.ProductDTO.Name):
+                        </dt>
+                        <dd class="col-md-8  col-sm-6">
+                                @Html.DisplayFor(model => model.ProductDTO.Name)
+                        </dd>
+                        <dt class="col-md-4 col-sm-6">
+                                @Html.DisplayNameFor(model => model.ProductDTO.Description):
+                        </dt>
+                        <dd class="col-md-8  col-sm-6">
+                                @Html.DisplayFor(model => model.ProductDTO.Description)
+                        </dd>
+                        <dt class="col-md-4 col-sm-6">
+                                @Html.DisplayNameFor(model => model.ProductDTO.Price):
+                        </dt>
+                        <dd class="col-md-8  col-sm-6">
+                                @Html.DisplayFor(model => model.ProductDTO.Price)$
+                        </dd>
+                        <dt class="col-md-4 col-sm-6">
+                                @Html.DisplayNameFor(model => model.ProductDTO.Quantity):
+                        </dt>
+                        <dd class="col-md-8  col-sm-6">
+                                @Html.DisplayFor(model => model.ProductDTO.Quantity)
+                        </dd>
+                        </dd>
+
+                      
+
+
+
+                    </dl>
+                    <div>
+                        
+                        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+      
+
+
+    </div>
+
+
+    
+</div>
+

@@ -1,0 +1,32 @@
+﻿@using DAL.Models;
+@model IEnumerable<Category>
+<form class="search-form d-flex flex-column align-items-center" asp-action="Search" asp-controller="Products">
+    <div class="form-group m-1">
+     
+        <input type="text" name="filter" placeholder="Search By Name Or Discrib" title="Enter search keyword" class="form-control">
+      
+    </div>
+    
+    <div class="form-group m-1">
+        <input type="number" min="1" name="fromPrice" placeholder="Price : from " title="Enter Price From" class="form-control">
+    </div>
+    <div class="form-group m-1">
+        <input type="number" min="1" name="toPric" placeholder="Price : to" title="Enter Price To" class="form-control">
+    </div> 
+    <div class="form-group m-1">
+        <select class="form-select" aria-label="Default select example" name="categoryId">
+            <option selected disabled>Select Category menu</option>
+            @{
+                foreach (var i in Model)
+                {
+                    <option value="@i.Id">@i.Name</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" title="Search" class="btn btn-info m-2 w-100"><i class="bi bi-search"></i></button>
+    </div>
+
+     </form>

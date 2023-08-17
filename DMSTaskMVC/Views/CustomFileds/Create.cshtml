@@ -1,0 +1,60 @@
+﻿@model BLL.DTOs.CustomData.CustomFieldViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div style="text-align:right" class="mb-2">
+    <a asp-action="Index" asp-controller="Products" class="btn btn-secondary"><i class="fa-solid fa-angles-left"></i>Go To All Products</a>
+</div>
+<div class="row justify-content-center">
+
+    <div class="card col-lg-6  col-md-9 col-sm-12 px-2">
+
+
+        <div class="my-2" style="text-align: center;">
+
+            <h4 style="color:#FAB005" class="my-4 ">Create new Field and Value Fro a Product</h4>
+
+        </div>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Value" class="control-label form-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+
+       
+
+            <div class="form-group">
+                <div class="row mb-3">
+                    <div class="text-lg-end col-lg-3">
+                        <label style="text-align:center" asp-for="ProductId" class="control-label"></label>
+                    </div>
+                    <div class="col-lg-9">
+                        <select asp-for="ProductId" class="form-select" asp-items=" ViewBag.Products">
+                            <option value="0" selected disabled>Select a Product</option>
+                        </select>
+                        <span asp-validation-for="ProductId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group d-flex justify-content-center mt-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

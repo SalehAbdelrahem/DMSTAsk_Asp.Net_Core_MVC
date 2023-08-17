@@ -1,0 +1,15 @@
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\bin\Debug\net6.0\BLL.dll
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\bin\Debug\net6.0\BLL.pdb
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\bin\Debug\net6.0\DAL.dll
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\bin\Debug\net6.0\DAL.pdb
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.dll
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\BLL.pdb
+D:\Task_Inteviews\DMSTask\DMSTaskMVC\BLL\obj\Debug\net6.0\ref\BLL.dll

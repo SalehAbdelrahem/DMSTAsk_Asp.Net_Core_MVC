@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <!-- All Product Card -->
+    <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+
+            <div class="card-body">
+                <h1 class="card-title align-self-end">All Product</h1>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-info-circle text-primary fs-1"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h1>@ViewBag.ProductsCount</h1>
+                        <span class="text-success small pt-1 fw-bold">
+                            <a asp-controller="Products" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </span> 
+                        <span class="text-muted small pt-2 ps-1">....</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- End Sales Card -->
+
+    <!-- Category Card-->
+    <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+
+            <div class="card-body">
+                <h1 class="card-title align-self-end">All Category</h1>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    
+                        <i class="bi bi-files text-primary fs-1"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h1>@ViewBag.CategoriesCount</h1>
+                        <span class="text-success small pt-1 fw-bold">
+                            <a asp-controller="Categories" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </span>
+                        <span class="text-muted small pt-2 ps-1">....</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Category Card -->
+
+    <!-- CustomFiled Card-->
+    <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+
+            <div class="card-body">
+                <h1 class="card-title align-self-end">All Custom Filed</h1>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        
+                        <i class="bi bi-card-list text-primary fs-1"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h1>@ViewBag.CustomFiledCount</h1>
+                        <span class="text-success small pt-1 fw-bold">
+                            <a asp-controller="CustomFileds" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </span>
+                        <span class="text-muted small pt-2 ps-1">....</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End CustomFiled Card -->
+</div>
+
