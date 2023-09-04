@@ -150,6 +150,7 @@ namespace DMSTaskMVC.Controllers
             {
                 return NotFound();
             }
+            
             ViewBag.Categories = new SelectList(await _categoryRepository.GetAllAsync(), "Id", "Name");
             var model = _mapper.Map<EditProductDTO>(product);
             model.CategoriesId = product.Categories.Select(c => c.Id).ToList();

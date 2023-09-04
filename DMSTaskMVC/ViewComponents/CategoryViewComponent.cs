@@ -15,6 +15,7 @@ namespace DMSTaskMVC.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+
             return View("Index",  (await _categoryRepository.GetAllAsync()));
         }
     }

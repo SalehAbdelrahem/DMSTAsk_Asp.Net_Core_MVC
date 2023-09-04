@@ -49,7 +49,7 @@
                         <label style="text-align:center" asp-for="CategoriesId" class="control-label"></label>
                     </div>
                     <div class="col-lg-9">
-                        <select asp-for="CategoriesId" class="form-select" asp-items="ViewBag.Categories" multiple>
+                        <select asp-for="CategoriesId" class="form-select" asp-items="@ViewBag.Categories" multiple>
                             <option value="0" selected disabled>Select Multi Categories</option>
                         </select>
                         <span asp-validation-for="CategoriesId" class="text-danger"></span>
